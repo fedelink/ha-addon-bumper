@@ -1,5 +1,5 @@
 name: Seitron spia
-version: "0.1.0"
+version: "0.2.0"
 slug: seitron_spia
 description: Diagnostic listener - logs which host and protocol the Seitron Smart Fan thermostats use, and whether they accept a self-signed TLS certificate
 arch:
@@ -16,7 +16,9 @@ ports:
   443/tcp: 443
   8443/tcp: 8443
   8080/tcp: 8080
+  8883/tcp: 8883
 ports_description:
   443/tcp: HTTPS / TLS
   8443/tcp: alternate TLS
   8080/tcp: alternate HTTP
+  8883/tcp: MQTT over TLS (mqtt.seitron.xyz)
