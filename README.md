@@ -6,6 +6,14 @@ integration in `self_hosted` mode. No secrets or house data are stored here.
 
 Data and certificates live in the add-on config folder. Port 1883 is left unpublished on purpose.
 
+## Announced IP
+
+Set the option `announce_ip` to the LAN address of the Home Assistant host (for example
+`192.168.1.90`). Bumper listens on `0.0.0.0`, so it cannot work out which address to hand the robot
+when it asks where the XMPP server is; without this the robot is told to connect somewhere it cannot
+reach and never registers. The add-on exports it as `BUMPER_ANNOUNCE_IP`. Empty option = the value
+is left to Bumper's own default.
+
 ## Patch for legacy XMPP robots (OZMO 930 and similar)
 
 The add-on builds on the upstream image and applies `bumper/patch_legacy_ctl.py`: Bumper 0.4.1
